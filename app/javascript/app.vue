@@ -1,6 +1,14 @@
 <template>
   <div>
-    <router-view></router-view>
+    <div>
+      <ul>
+        <li><router-link :to="{ name: 'EmployeeIndexPage' }">HOME</router-link></li>
+        <li><router-link :to="{ name: 'EmployeeNewPage' }">新規作成</router-link></li>
+      </ul>
+    </div>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -23,7 +31,8 @@
       {
         path: '/employees/:id(\\d+)',
         name: 'EmployeeDetailPage',
-        component: EmployeeDetailPage
+        component: EmployeeDetailPage,
+        props: true
       },
       {
         path: '/employees/new',
@@ -44,3 +53,13 @@
     router
   }
 </script>
+
+<style scoped>
+div {
+  margin-top: 50px;
+}
+p {
+  font-size: 2em;
+  text-align: center;
+}
+</style>

@@ -27,7 +27,7 @@
         axios
           .patch(`/api/v1/employees/${this.employee.id}`, this.employee)
           .then(response => {
-            this.$router.push({ name: 'EmployeeDetailPage', params: { id: this.employee.id } });
+            this.$router.push({ name: 'EmployeeDetailPage', params: { id: this.employee.id, message: "更新しました" } });
           })
           .catch(error => {
             console.error(error);
